@@ -21,10 +21,16 @@ export default class SearchBar extends Component {
     this.setState({ term: event.target.value });
   }
 
+  onFormSubmit(event) {
+    // Form will not try to submit itself to the server so we can intercept and
+    // fetch weather data for the user
+    event.preventDefault();
+  }
+
   render() {
     return (
       // update state by using a change handler on the input
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           placeholder="Get a five-day forecast in your favorite cities"
           className="form-control"
