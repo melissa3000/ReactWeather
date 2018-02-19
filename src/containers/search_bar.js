@@ -8,11 +8,17 @@ export default class SearchBar extends Component {
     // set up state to be this.state.term (meaning search term) and set the default
     // to an empty string so that when it first shows up, it's completely empty
     this.state = { term: '' };
+
+    // Bind the context of onInputChange. Often required when your callback has a
+    // reference to 'this' (for example, onChange={this.onInputChange} and this.setState({ term: event.target.value }))
+    // If you forget, the error shows setState as undefined
+    this.onInputChange = this.onInputChange.bind(this);
   }
 
   // Create change handler to be used for updating input below
   onInputChange(event) {
-    console.log(event.target.value);
+    // set state when text is entered into search bar
+    this.setState({ term: event.target.value });
   }
 
   render() {
