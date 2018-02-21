@@ -17,8 +17,11 @@ const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KE
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
+// action creator
 export function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city}, us`;
+  // Request does an ajax request in the form of a get to the url supplied and
+  // returns a promise. Promise gets passed to the action's payload.
   const request = axios.get(url);
 
   // All actions must return a type, some also return a payload

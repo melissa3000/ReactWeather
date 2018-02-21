@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions/index';
 
-export default class SearchBar extends Component {
+// Remove export default when you add the mapDispatchToProps function at the bottom
+class SearchBar extends Component {
   // initialize component level state by creating a constructor
   constructor(props) {
     super(props);
@@ -13,6 +17,7 @@ export default class SearchBar extends Component {
     // reference to 'this' (for example, onChange={this.onInputChange} and this.setState({ term: event.target.value }))
     // If you forget, the error shows setState as undefined
     this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   // Create change handler to be used for updating input below
@@ -25,6 +30,11 @@ export default class SearchBar extends Component {
     // Form will not try to submit itself to the server so we can intercept and
     // fetch weather data for the user
     event.preventDefault();
+
+    // Fetch weather data
+    this.props.fetchWeather(this.state.term);
+    // clear search input after each search so user sees the search bar cleared
+    this.setState({ term: '' });
   }
 
   render() {
@@ -43,3 +53,16 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+
+// Connect action creator fetchWeather to searchBar container
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchWeather }, dispatch);
+}
+
+// null as first argument because mapDispatchToProps has to be the second argument
+export default connect(null, mapDispatchToProps)(SearchBar);
+
+
+
+
