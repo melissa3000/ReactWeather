@@ -4,6 +4,22 @@ import { connect } from 'react-redux';
 class WeatherList extends Component {
   renderWeather(cityData) {
     const name = cityData.city.name;
+    // Add code to be able to extract temp, humidity, pressure from cityData
+    // Data structure of cityData is:
+    // weather: [
+    //  city: {name: 'San Francisco'}
+    //  list: [
+    //    {main: {temp: 85, humidity: 40, pressure: 55 }}
+    //    {main: {temp: 85, humidity: 40, pressure: 55 }}
+    //    {main: {temp: 85, humidity: 40, pressure: 55 }}
+    //    {main: {temp: 85, humidity: 40, pressure: 55 }}
+    //   ]
+    // ]
+
+    // For each item in cityData.list map over it passing each weather.main.temp to get
+    // an array of each temp in the list
+    const temps = cityData.list.map(weather => weather.main.temp)
+
 
     return (
       <tr key={name}>
