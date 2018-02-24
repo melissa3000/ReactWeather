@@ -1,0 +1,16 @@
+
+/* Mark alignment as important so that graphs are displayed uniformly */
+td, th {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+/* Prevent search bar input from being squashed against top of page */
+.input-group {
+  margin: 20px 0px;
+}
+
+/* Make graphs all the same size */
+svg {
+  height: 150px;
+}
