@@ -14,3 +14,11 @@ td, th {
 svg {
   height: 150px;
 }
+
+/* set size of google map */
+/* find the first td inside of each row and its child div and set it's height
+  and width */
+td:first-of-type, td:first-of-type > div {
+  height: 200px;
+  width: 250px;
+}
