@@ -9,7 +9,10 @@ import React, { Component } from 'react';
 
 // Google maps api already wired in on index.html file
 class GoogleMap extends Component {
+  // Live cycle method that gets called automatically after this component has been
+  // rendered to the screen.
   componentDidMount() {
+    // Create embedded google map on page.
     new google.maps.Map(this.refs.map, {
       zoom: 12,
       center: {
