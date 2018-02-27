@@ -33,6 +33,8 @@ Features under development:
 
 * Convert to F or C instead of Kelvin
 
+* Deploy (currently only runs on http://localhost:8080/)
+
 
 ## About the Developer
 
