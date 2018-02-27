@@ -4,7 +4,7 @@
 A React and Redux project based on the Udemy lessons of Stephen Grider.
 This weather app allows a user to enter any city in the US and uses Axios to make
 an Ajax request to fetch weather data using the Open Weather API. It returns
-temperature in Kelvin, humidity, and pressure and also makes and API call to
+temperature in Kelvin, humidity in hPA, and pressure in % and also makes and API call to
 Google Maps to return a map of the requested city.
 
 
@@ -23,7 +23,7 @@ Enter a city name and press enter or click on submit.
 ![alt text](/reactWeatherScreenShot.png "Results of Search")
 
 As additional cities are entered, the screen will update to include the original
-search, as well as, any new cities.
+search, as well as any new cities.
 
 ## Version 2.0
 
@@ -33,7 +33,7 @@ Features under development:
 
 * Convert to F or C instead of Kelvin
 
-* Deploy (currently only runs on http://localhost:8080/)
+* Deploy (currently only runs on http://localhost:8080/), "npm start" to run local server
 
 
 ## About the Developer
