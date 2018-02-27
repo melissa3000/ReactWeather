@@ -16,7 +16,7 @@ Google Maps to return a map of the requested city.
 * Google Maps API
 * Open Weather API
 
-## How to Use Road Tripper
+## How to Use the React Weather App
 
 Enter a city name and press enter or click on submit.
 
