@@ -1,0 +1,12 @@
+blinker==1.4
+certifi==2017.7.27.1
+chardet==3.0.4
+Flask==0.10.1
+Flask-DebugToolbar==0.10.0
+idna==2.6
+itsdangerous==0.24
+Jinja2==2.7.3
+MarkupSafe==0.23
+requests==2.18.4
+urllib3==1.23
+Werkzeug==0.9.6
